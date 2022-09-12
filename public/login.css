@@ -1,0 +1,43 @@
+body{
+    margin-left: 0px; 
+    background-color: black;
+}
+.d-flex{
+    margin-left: 0px;
+    height: 100vh;
+    border: 1px solid black;
+}
+.card{
+    border: 1px solid #28a745;
+    padding: 30px;
+    width: 30rem;
+    height: fit-content;
+    font-size: 20px;
+}
+.card-header{
+    background-color: #fff;
+    font-weight: 600
+}
+.input-group-text{
+    background-color: #0047ab;
+}
+svg path {
+    stroke: #ffffff; /* Background color against your svg */
+    stroke-width: 1px; /*Between 1px and 2px*/
+  }
+#ask{
+    font-size: 12px;
+}
+.loginButton{
+    width: 100%;
+    background-color: white;
+    color: #0047ab;
+    border-color: #0047ab;
+    transition: 0.5s;
+}
+.loginButton:hover{
+    width: 100%;
+    background-color: #0047ab !important;
+    color: white;
+    border-color: #0047ab;
+}
