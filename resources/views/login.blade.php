@@ -9,36 +9,35 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="login.css">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script>
-        $(function () {
-
-            $('#login-form-link').click(function (e) {
-                $("#login-form").delay(100).fadeIn(100);
-                $("#register-form").fadeOut(100);
-                $("#register-form").removeClass("d-none");
-                e.preventDefault();
-            });
-            $('#register-form-link').click(function (e) {
-                $("#register-form").delay(100).fadeIn(100);
-                $("#login-form").fadeOut(100);
-                $("#register-form").removeClass("d-none");
-                e.preventDefault();
-            });
-
-        });
-
+    <script src="login.js">
 
     </script>
+    <style>
+
+    </style>
     <title>Login</title>
 </head>
 
 <body>
     <main>
         <div class="d-flex align-items-center justify-content-center">
-
+            
             <form id="login-form" action="/login" method="post" class="card">
                 <div class="card-header text-center">Login</div>
                 <div class="card-body">
+                    @if ($errors->has("username_register")||$errors->has("password_register")||$errors->has("name"))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Register Failed!</strong> You should check in on some of register fields.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+                    @if ($message=Session::get("register_success"))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{$message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
+
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="username"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                 height="40" fill="white" class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -58,38 +57,61 @@
                     </div>
                     <button class="btn btn-success loginButton">
                         Login
-                    </button><span id="ask">Don't have an account?<span> <a href="#" id="register-form-link">Register
+                    </button><span id="ask">Don't have an account?<span> <a href="#register"
+                                id="register-form-link">Register
                                 here</a></span></span>
                 </div>
+                @csrf
             </form>
 
-            <form action="/register" method="post" class="card d-none" id="register-form">
+            <form action="/register" method="post" class="card" id="register-form" style="display: none;">
                 <div class="card-header text-center">Register</div>
                 <div class="card-body">
                     <div class="mb-3 row">
                         <label for="name" class="col-4 col-form-label">Name</label>
                         <div class="col-8">
-                            <input type="text" class="form-control" id="name" name="name">
+                            <input type="text" class="form-control @error("name") is-invalid @enderror" id="name"
+                                name="name" required>
+                                @error("name")
+                                <div class="text-danger">
+                                    <span class="text-danger">{{$message}}</span>
+                                </div>
+                                @enderror
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="Username" class="col-4 col-form-label">Username</label>
                         <div class="col-8">
-                            <input type="text" class="form-control" id="Username" name="username">
+                            <input type="text" class="form-control @error("username_register") is-invalid @enderror"
+                                id="Username" name="username_register" value="{{old("username_register")}}" required >
+                            @error("username_register")
+                            <div class="text-danger">
+                                <span class="text-danger">{{$message}}</span>
+                            </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="Password" class="col-4 col-form-label">Password</label>
                         <div class="col-8">
-                            <input type="text" class="form-control" id="Password" name="password">
+                            <input class="form-control @error('password_register')is-invalid @enderror" type="password" name="password_register" id="input_password" value="{{old("password_register")}}">
+                            @error("password_register")
+                            <div class="text-danger">
+                                <span class="text-danger">{{$message}}</span>
+                            </div>
+                            @enderror
                         </div>
                     </div>
-
+                    
+                    
+                    <input type="checkbox" onclick="myFunction()" id="show_pass">  <label for="show_pass">Show Password</label>
+                    <p></p>
                     <button class="btn btn-success loginButton">
                         Register
                     </button><span id="ask">Already have an account?<span> <a href="#"
                                 id="login-form-link">Login</a></span></span>
                 </div>
+                @csrf
             </form>
 
         </div>
