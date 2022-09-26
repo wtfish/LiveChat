@@ -32,7 +32,7 @@ $(function() {
 	});
 
 });
-function myFunction() {
+function showPassword() {
 	var x = document.getElementById("input_password");
 	if (x.type === "password") {
 	  x.type = "text";

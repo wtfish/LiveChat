@@ -25,18 +25,21 @@
             <form id="login-form" action="/login" method="post" class="card">
                 <div class="card-header text-center">Login</div>
                 <div class="card-body">
+                    {{-- register validation when fail --}}
                     @if ($errors->has("username_register")||$errors->has("password_register")||$errors->has("name"))
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <strong>Register Failed!</strong> You should check in on some of register fields.
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif
+                    {{-- register validation when success --}}
                     @if ($message=Session::get("register_success"))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{$message}}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     @endif
+                    
 
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="username"><svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -71,7 +74,7 @@
                         <label for="name" class="col-4 col-form-label">Name</label>
                         <div class="col-8">
                             <input type="text" class="form-control @error("name") is-invalid @enderror" id="name"
-                                name="name" required>
+                                name="name" required value="{{old("nama")}}">
                                 @error("name")
                                 <div class="text-danger">
                                     <span class="text-danger">{{$message}}</span>
@@ -104,7 +107,7 @@
                     </div>
                     
                     
-                    <input type="checkbox" onclick="myFunction()" id="show_pass">  <label for="show_pass">Show Password</label>
+                    <input type="checkbox" onclick="showPassword()" id="show_pass">  <label for="show_pass">Show Password</label>
                     <p></p>
                     <button class="btn btn-success loginButton">
                         Register

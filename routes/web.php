@@ -20,3 +20,9 @@ Route::get('/', function () {
 });
 Route::get('/login', [LoginController::class,"index"]);
 Route::post('/register', [RegistrationController::class,"store"]);
+Route::get('/chat',function(){
+    $title="Chat";
+    return view("chat",[
+        "title"=>$title
+    ]);
+});
