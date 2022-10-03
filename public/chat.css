@@ -27,7 +27,8 @@ body{
     justify-content: center;
     min-height: 100vh;
     max-width: 1536px;
-    min-width: 1536px;box-sizing: border-box;
+    min-width: 1536px;
+    box-sizing: border-box;
 }
 aside{
     background-color: #111b21;
@@ -77,11 +78,11 @@ svg{
     border-radius: 5px;
 }
 .search-contact-container input{
-    width: 70%;
-    border-radius: 10px;
+    width: 85%;
+    /* border-radius: 10px; */
     background-color: #343f46;
     border: 0;
-    color: wheat;
+    /* color: wheat; */
 }
 .search-contact-container input:focus{
     outline:none!important;
@@ -89,17 +90,45 @@ svg{
 aside .active-chats{
     height: 100vh;
     background-color: #111b21;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .active-chats{
     box-sizing: border-box;
 }
 .active-chats .chat{
-    color: wheat;
+    color: white;
     border-bottom: 0.5px solid grey;
+    display: flex;
+}
+.active-chats .chat .avatar{
+    height: 55px;
+    display: inline-block;
+    padding: 20px;
 }
 .active-chats .chat .avatar img{
-    height: 55px;
-    padding: 20px;
+    height: 100%;
     border-radius: 50%;
 }
+.chat .details{
+    display: inline-block;
+    flex: 2;
+    margin-top: 20px;
+}
+.details-container{
+    /* background-color: blanchedalmond; */
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.details-container .name{
+    /* background-color: blue; */
+    font-weight: bolder;
+    font-size: large;
+}
+.details-container .recent-message{
+    /* background-color: red; */
+}
+
+

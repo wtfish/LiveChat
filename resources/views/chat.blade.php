@@ -31,55 +31,96 @@
                     <div class="avatar">
                         <img src="blankpp.jpg" class="clickable" alt="">
                     </div>
-                </div>
-                <div class="chat">
-                    <div class="avatar">
-                        <img src="blankpp.jpg" class="clickable" alt="">
+                    <div class="details">
+                        <div class="details-container">
+                            <div class="name">
+                                John Doe
+                            </div>
+                            <div class="recent-message">
+                                halo perkenalkan
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="chat">
                     <div class="avatar">
                         <img src="blankpp.jpg" class="clickable" alt="">
                     </div>
-                </div>
-                <div class="chat">
-                    <div class="avatar">
-                        <img src="blankpp.jpg" class="clickable" alt="">
+                    <div class="details">
+                        <div class="details-container">
+                            <div class="name">
+                                John Doe
+                            </div>
+                            <div class="recent-message">
+                                halo perkenalkan
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="chat">
                     <div class="avatar">
                         <img src="blankpp.jpg" class="clickable" alt="">
                     </div>
-                </div>
-                <div class="chat">
-                    <div class="avatar">
-                        <img src="blankpp.jpg" class="clickable" alt="">
+                    <div class="details">
+                        <div class="details-container">
+                            <div class="name">
+                                John Doe
+                            </div>
+                            <div class="recent-message">
+                                halo perkenalkan
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="chat">
                     <div class="avatar">
                         <img src="blankpp.jpg" class="clickable" alt="">
                     </div>
-                </div>
-                <div class="chat">
-                    <div class="avatar">
-                        <img src="blankpp.jpg" class="clickable" alt="">
+                    <div class="details">
+                        <div class="details-container">
+                            <div class="name">
+                                John Doe
+                            </div>
+                            <div class="recent-message">
+                                halo perkenalkan
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="chat">
                     <div class="avatar">
                         <img src="blankpp.jpg" class="clickable" alt="">
                     </div>
-                </div>
-                <div class="chat">
-                    <div class="avatar">
-                        <img src="blankpp.jpg" class="clickable" alt="">
+                    <div class="details">
+                        <div class="details-container">
+                            <div class="name">
+                                John Doe
+                            </div>
+                            <div class="recent-message">
+                                halo perkenalkan
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="chat">
                     <div class="avatar">
                         <img src="blankpp.jpg" class="clickable" alt="">
+                    </div>
+                    <div class="details">
+                        <div class="details-container">
+                            <div class="name">
+                                John Doe
+                            </div>
+                            <div class="recent-message">
+                                halo perkenalkan
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
